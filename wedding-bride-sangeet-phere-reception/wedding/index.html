@@ -1,0 +1,153 @@
+<!DOCTYPE html><html lang="en" class="lock"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Vivek &amp; Princy</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+*{margin:0;box-sizing:border-box}
+html,body{background:#a9b98b;-webkit-tap-highlight-color:transparent}
+.lock,.lock body{overflow:hidden;height:100%}
+#w{max-width:520px;margin:0 auto}
+#intro{min-height:100svh;display:flex;align-items:center;justify-content:center}
+#rest{display:none}
+.pg{position:relative;width:100%;aspect-ratio:940/1672;container-type:inline-size;overflow:hidden}
+.pg>img{display:block;width:100%;height:100%}
+.L{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#gate{z-index:3;cursor:pointer;transition:opacity 1.6s ease}
+#gate.out{opacity:0;pointer-events:none}
+#ring{position:absolute;left:50%;top:40.7%;width:22cqw;height:22cqw;margin:-11cqw;border:.5cqw solid rgba(255,238,180,.95);border-radius:50%;animation:rg 2s infinite;pointer-events:none}
+@keyframes rg{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.5);opacity:0}}
+#tap{position:absolute;left:0;right:0;top:77%;text-align:center;font:10cqw/1 'Pinyon Script',cursive;color:#7a520b;text-shadow:0 0 1.4cqw rgba(255,244,200,.9);animation:pl 2s infinite;pointer-events:none}
+@keyframes pl{50%{opacity:.35}}
+.win{position:absolute;left:25.4%;top:18.9%;width:49.2%;height:47.2%;object-fit:cover;background:#f3ecd2}
+#arr{position:absolute;left:50%;bottom:5.5%;width:12cqw;margin-left:-6cqw;opacity:0;transition:opacity 1s;cursor:pointer;z-index:5;animation:bn 1.4s infinite}
+#arr.on{opacity:1}
+@keyframes bn{50%{transform:translateY(2cqw)}}
+.hs{position:absolute;display:block;border-radius:4cqw}
+.hs:active{background:rgba(255,255,255,.2)}
+.gold{background:linear-gradient(#f0cf7a,#b8862b 55%,#8a6112);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sc{position:absolute;left:24.7%;top:49.2%;width:48.8%;height:13.2%;border-radius:50%;overflow:hidden}
+.dt{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;font:5.4cqw/1.05 'Pinyon Script',cursive;text-align:center;color:#4e3205;-webkit-text-stroke:.28cqw #4e3205;text-shadow:0 .25cqw 0 rgba(255,238,175,.75)}
+.sc canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;transition:opacity 1.2s}
+.sc:not(.done)::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 35%,rgba(255,250,215,.75) 50%,transparent 65%);background-size:250% 100%;animation:sh 2.4s linear infinite}
+@keyframes sh{from{background-position:150% 0}to{background-position:-100% 0}}
+.tg{position:absolute;top:60.7%;width:12.4%;height:12.9%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding-top:3cqw;text-align:center;font-family:'Cormorant Garamond',serif;font-weight:600}
+.tg b{font-size:6.4cqw;line-height:1}.tg i{font-style:normal;font-size:2.3cqw;margin-top:.8cqw}
+#mu{position:fixed;top:max(12px,env(safe-area-inset-top));right:12px;z-index:150;width:42px;height:42px;border-radius:50%;border:1px solid #B8862B;background:rgba(246,235,214,.9);display:none;align-items:center;justify-content:center;cursor:pointer;padding:0}
+#mu.on{display:flex}#mu svg{width:22px;height:22px;fill:none;stroke:#8a6112;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+#mu .w{display:none}#mu.play .w{display:block}#mu.play .x{display:none}
+#pet{position:fixed;inset:0;z-index:80;pointer-events:none;opacity:0;transition:opacity 2s}
+#m{position:fixed;inset:0;z-index:200;background:rgba(10,8,6,.95);display:none;flex-direction:column;align-items:center;justify-content:center}
+#m.on{display:flex}#m video{max-width:100%;max-height:85%}
+#mv::-webkit-media-controls-mute-button,#mv::-webkit-media-controls-volume-slider,#mv::-webkit-media-controls-volume-control-container{display:none!important}
+#mm{color:#fff;font:14px/1.4 sans-serif;text-align:center;padding:10px}
+#x{position:absolute;top:max(14px,env(safe-area-inset-top));right:16px;color:#fff;font:34px/1 sans-serif;background:none;border:0;cursor:pointer}
+</style></head><body>
+<div id="w">
+<div id="intro"><div class="pg">
+  <video class="L" id="gv2" src="videos/ganesh.mp4" muted playsinline preload="auto"></video>
+  <div class="L" id="gate"><img class="L" src="images/01-lock.jpg" alt=""><video class="L" id="gv" src="videos/gate.mp4" muted playsinline preload="auto"></video><div id="ring"></div><div id="tap">Tap to open</div></div>
+  <svg id="arr" viewBox="0 0 40 40" fill="none" style="filter:drop-shadow(0 0 3px rgba(40,25,5,.75))" stroke="#fff3c4" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 10l12 11 12-11M8 22l12 11 12-11"/></svg>
+</div></div>
+
+<div id="rest">
+<div class="pg" id="p3"><img src="images/03-save-the-date.jpg" alt="">
+  <div class="sc" id="sc"><div class="dt"><span>November 11</span><span>2026</span></div><canvas></canvas></div></div>
+<div class="pg" hidden data-b="images/04-invitation-bride.jpg"><img alt=""></div>
+<div class="pg"><img src="images/04-invitation-groom.jpg" alt=""></div>
+<div class="pg" id="p5"><img src="images/05-events.jpg" alt="">
+  <a class="hs" data-v="sangeet" href="#" style="left:11.5%;width:77%;top:24.8%;height:17.1%"></a>
+  <a class="hs" data-v="phere" href="#" style="left:11.5%;width:77%;top:44.1%;height:16.8%"></a>
+  <a class="hs" data-v="reception" href="#" style="left:11.5%;width:77%;top:62.8%;height:15.8%"></a></div>
+<div class="pg" id="p6"><img src="images/06-countdown.jpg" alt="">
+  <div class="tg gold" style="left:19.7%"><b id="d">00</b><i>Days</i></div><div class="tg gold" style="left:35.6%"><b id="h">00</b><i>Hours</i></div>
+  <div class="tg gold" style="left:51.6%"><b id="mi">00</b><i>Minutes</i></div><div class="tg gold" style="left:67.6%"><b id="s">00</b><i>Seconds</i></div></div>
+<div class="pg" hidden data-b="images/07-rsvp-bride.jpg"><img alt="">
+  <a class="hs" href="tel:+17073088155" style="left:11.5%;width:76%;top:25.1%;height:13.8%"></a><a class="hs" href="tel:+17078346834" style="left:11.5%;width:76%;top:41.3%;height:13.8%"></a>
+  <a class="hs" href="tel:+17073694083" style="left:11.5%;width:76%;top:57.4%;height:13.8%"></a></div>
+<div class="pg"><img src="images/07-rsvp-groom.jpg" alt="">
+  <a class="hs" href="tel:+17078436834" style="left:11.5%;width:77%;top:24.8%;height:13.6%"></a><a class="hs" href="tel:+17073088155" style="left:11.5%;width:77%;top:40.7%;height:13.2%"></a><a class="hs" href="tel:+17073694083" style="left:11.5%;width:77%;top:56.0%;height:13.6%"></a></div>
+<div class="pg"><img src="images/08-thank-you.jpg" alt=""></div>
+</div></div>
+<canvas id="pet"></canvas>
+<audio id="au" src="music/song.mp3" loop preload="auto"></audio>
+<button id="mu" aria-label="music"><svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9z"/><path class="w" d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/><path class="x" d="M16 9l5 6M21 9l-5 6"/></svg></button>
+<div id="m"><button id="x" aria-label="close">&times;</button><video id="mv" controls controlsList="nodownload noremoteplayback" disablePictureInPicture playsinline muted></video><div id="mm"></div></div>
+
+<script>
+const TEST=true; /* true = a message appears at the bottom only if a file cannot be played */
+const $=s=>document.querySelector(s),root=document.documentElement;
+function toast(t){if(!TEST)return;const d=document.createElement('div');d.textContent=t;d.style.cssText='position:fixed;left:8px;right:8px;bottom:10px;z-index:999;background:rgba(40,25,10,.92);color:#fff;font:13px/1.3 sans-serif;padding:8px 10px;border-radius:8px;text-align:center';document.body.appendChild(d);setTimeout(()=>d.remove(),8000)}
+const gate=$('#gate'),gv=$('#gv'),gv2=$('#gv2'),au=$('#au'),mu=$('#mu');
+let go=0,nx=0,started=0,want=1;
+[['videos/gate.mp4',gv],['videos/ganesh.mp4',gv2],['music/song.mp3',au]].forEach(([n,e])=>e.addEventListener('error',()=>toast('Cannot play '+n)));
+addEventListener('load',()=>{[['videos/gate.mp4',gv],['videos/ganesh.mp4',gv2],['music/song.mp3',au]].forEach(([n,e])=>{if(e.error)toast('Cannot play '+n)})});
+/* optional pages (bride side) appear only if their image exists */
+document.querySelectorAll('[data-b]').forEach(p=>{const i=p.querySelector('img');i.onload=()=>{p.hidden=false};i.src=p.dataset.b});
+
+/* music starts at the very first tap */
+const ui=()=>mu.classList.toggle('play',!au.paused);
+function fadeIn(){let v=0;au.volume=0;const t=setInterval(()=>{v=Math.min(.6,v+.03);au.volume=v;if(v>=.6)clearInterval(t)},120)}
+const playM=()=>{if(want&&!au.error){au.play().then(ui).catch(()=>{ui();toast('Tap the speaker button to start the music')})}};
+const pauseM=()=>{au.pause();ui()};
+mu.onclick=()=>{want=au.paused?1:0;started=1;want?playM():pauseM()};
+
+/* tap to open -> gate video -> crossfade to the Ganesh ji video -> scroll arrow */
+function next(){if(nx)return;nx=1;gate.classList.add('out');
+ if(!gv2.error){gv2.currentTime=0;gv2.play().catch(()=>{})}
+ setTimeout(()=>{root.classList.remove('lock');$('#rest').style.display='block';$('#arr').classList.add('on')},2200)}
+gate.onclick=()=>{if(go)return;go=1;started=1;$('#tap').style.display=$('#ring').style.display='none';
+ if(!au.error){mu.classList.add('on');au.volume=0;au.play().then(()=>{ui();fadeIn()}).catch(()=>{ui();toast('Tap the speaker button to start the music')})}
+ if(gv.error){next();return}
+ gv.play().catch(next);
+ gv.addEventListener('timeupdate',()=>{if(gv.duration&&gv.duration-gv.currentTime<.9)next()});
+ gv.addEventListener('ended',next);gv.addEventListener('error',next);
+ setTimeout(()=>{if(!gv.currentTime)next()},10000)};
+$('#arr').onclick=()=>$('#p3').scrollIntoView({behavior:'smooth'});
+
+/* falling rose petals from page 3 to the end */
+const pc=$('#pet'),px=pc.getContext('2d');let W,H;
+const rs=()=>{W=pc.width=innerWidth;H=pc.height=innerHeight};rs();addEventListener('resize',rs);
+const C=['#e9a3b5','#d9667e','#f4c6cf','#c2415f','#f0b6c0'];
+const P=Array.from({length:28},()=>({x:Math.random()*W,y:Math.random()*H,r:5+Math.random()*6,s:.5+Math.random()*.9,d:Math.random()*6,c:C[Math.random()*5|0]}));
+(function f(){px.clearRect(0,0,W,H);P.forEach(p=>{p.y+=p.s;p.d+=.025;p.x+=Math.sin(p.d)*.7;if(p.y>H+12){p.y=-12;p.x=Math.random()*W}
+ px.save();px.translate(p.x,p.y);px.rotate(p.d);px.fillStyle=p.c;px.globalAlpha=.85;px.beginPath();px.ellipse(0,0,p.r,p.r*.6,0,0,6.28);px.fill();px.restore()});requestAnimationFrame(f)})();
+new IntersectionObserver(e=>{if(e[0].isIntersecting)pc.style.opacity=1},{threshold:.25}).observe($('#p3'));
+
+/* golden scratch oval */
+const sc=$('#sc'),cv=sc.querySelector('canvas'),cx=cv.getContext('2d');let dr=0,done=0,touched=0;
+function foil(){const b=cv.getBoundingClientRect();if(!b.width)return;cv.width=b.width*2;cv.height=b.height*2;cx.globalCompositeOperation='source-over';
+ const g=cx.createLinearGradient(0,0,cv.width,cv.height);g.addColorStop(0,'#c99a35');g.addColorStop(.3,'#f3dc8e');g.addColorStop(.55,'#d9ae4c');g.addColorStop(.8,'#f6e3a0');g.addColorStop(1,'#bb8a2a');
+ cx.fillStyle=g;cx.fillRect(0,0,cv.width,cv.height);
+ for(let i=0;i<260;i++){cx.fillStyle=Math.random()<.5?'rgba(255,255,230,.55)':'rgba(120,80,10,.25)';cx.fillRect(Math.random()*cv.width,Math.random()*cv.height,2+Math.random()*3,2+Math.random()*3)}}
+new ResizeObserver(()=>{if(!touched&&!done)foil()}).observe(cv);
+function scratch(e){if(!dr||done)return;const b=cv.getBoundingClientRect();cx.globalCompositeOperation='destination-out';
+ cx.beginPath();cx.arc((e.clientX-b.left)*2,(e.clientY-b.top)*2,Math.max(18,b.height*.45),0,6.28);cx.fill();if(Math.random()<.2)chk()}
+function chk(){if(done)return;const d=cx.getImageData(0,0,cv.width,cv.height).data;let n=0,t=0;for(let i=3;i<d.length;i+=64){t++;if(!d[i])n++}
+ if(n/t>.5){done=1;cv.style.opacity=0;cv.style.pointerEvents='none';sc.classList.add('done');burst();shower()}}
+cv.addEventListener('pointerdown',e=>{touched=1;dr=1;cv.setPointerCapture(e.pointerId);scratch(e)});cv.addEventListener('pointermove',scratch);
+addEventListener('pointerup',()=>{dr=0;if(touched)chk()});
+function burst(){const r=sc.getBoundingClientRect(),E=['🌸','🌷','💗','🌼','✨'];
+ for(let i=0;i<24;i++){const s=document.createElement('span'),a=Math.random()*6.28,d=90+Math.random()*150;s.textContent=E[i%5];
+  s.style.cssText=`position:fixed;left:${r.left+r.width/2}px;top:${r.top+r.height/2}px;font-size:${18+Math.random()*16}px;z-index:90;pointer-events:none`;document.body.appendChild(s);
+  s.animate([{transform:'translate(-50%,-50%) scale(.3)',opacity:1},{transform:`translate(-50%,-50%) translate(${Math.cos(a)*d}px,${Math.sin(a)*d-70}px) rotate(${Math.random()*360}deg) scale(1.2)`,opacity:0}],{duration:1600+Math.random()*900,easing:'ease-out'}).onfinish=()=>s.remove()}}
+
+/* extra roses fall for a few seconds after scratching */
+function shower(){const E=['🌹','🌸','🌹','🌷'];let n=0;const t=setInterval(()=>{if(++n>55){clearInterval(t);return}
+ const s=document.createElement('span'),sz=20+Math.random()*18,dur=3200+Math.random()*2400;s.textContent=E[n%4];
+ s.style.cssText=`position:fixed;left:${Math.random()*innerWidth}px;top:-40px;font-size:${sz}px;z-index:90;pointer-events:none`;document.body.appendChild(s);
+ s.animate([{transform:'translateY(0) rotate(0)',opacity:1},{transform:`translateY(${innerHeight+80}px) translateX(${(Math.random()-.5)*160}px) rotate(${(Math.random()-.5)*540}deg)`,opacity:.95}],{duration:dur,easing:'linear'}).onfinish=()=>s.remove()},90)}
+
+/* event videos open in a player */
+const m=$('#m'),mv=$('#mv'),mm=$('#mm');
+document.querySelectorAll('[data-v]').forEach(a=>a.onclick=e=>{e.preventDefault();mm.textContent='';
+ mv.muted=true;mv.volume=0;mv.src='videos/'+a.dataset.v+'.mp4';m.classList.add('on');mv.play().catch(()=>{})});
+mv.addEventListener('volumechange',()=>{if(!mv.muted||mv.volume)mv.muted=true;mv.volume=0});
+mv.addEventListener('error',()=>{if(mv.getAttribute('src'))mm.textContent='Cannot play '+mv.getAttribute('src')});
+$('#x').onclick=()=>{mv.pause();mv.removeAttribute('src');mv.load();mm.textContent='';m.classList.remove('on');if(want&&started)playM()};
+
+/* countdown to 11 November 2026 */
+const T=new Date('2026-11-11T00:00:00');
+function tick(){const s=Math.max(0,T-new Date())/1000|0,z=n=>String(n).padStart(2,'0');
+ $('#d').textContent=z(s/86400|0);$('#h').textContent=z(s%86400/3600|0);$('#mi').textContent=z(s%3600/60|0);$('#s').textContent=z(s%60)}
+tick();setInterval(tick,1000);
+</script></body></html>
